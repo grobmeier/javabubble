@@ -3,7 +3,6 @@ package org.javabubble.generator.model;
 import java.util.regex.Pattern;
 
 public final class FediverseHandle extends Handle {
-
 	private static final Pattern HANDLE_PATTERN = Pattern.compile("[A-Za-z0-9_]+@[a-z0-9\\-]+(\\.[a-z0-9\\-]+)+");
 
 	public FediverseHandle(String handle) {
@@ -23,5 +22,4 @@ public final class FediverseHandle extends Handle {
 	public String getWebLink() {
 		return "https://%s/@%s".formatted(getServer(), getLocalHandle());
 	}
-
 }
