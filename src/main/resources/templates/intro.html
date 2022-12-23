@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Masto Bubbles</h1>
+
+<div>Welcome!</div>
+
+<h2>Bubbles collected on this page</h2>
+
+<ul th:each="bubble: ${bubbles}">
+    <li><a th:href="'./' + ${bubble.bubbleName} + '/index.html'" th:text="${bubble.bubbleName}">Bubble name</a>
+    </li>
+</ul>
+
+</body>
+</html>

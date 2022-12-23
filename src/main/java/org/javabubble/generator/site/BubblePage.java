@@ -14,13 +14,13 @@ import org.javabubble.generator.model.Person;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-public class Site {
+public class BubblePage {
 
 	private TemplateEngine templateEngine;
 	private Bubble bubble;
 	private SiteOutput output;
 
-	public Site(TemplateEngine templateEngine, Bubble bubble, SiteOutput output) {
+	public BubblePage(TemplateEngine templateEngine, Bubble bubble, SiteOutput output) {
 		this.templateEngine = templateEngine;
 		this.bubble = bubble;
 		this.output = output;
@@ -38,9 +38,7 @@ public class Site {
 			Context context = new Context();
 			context.setVariable("people", bubble.people());
 			context.setVariable("bubbleName", bubble.bubbleName());
-			String index = templateEngine.process("bubble", context);
-			System.out.println(index);
-			writer.write(index);
+			writer.write(templateEngine.process("bubble", context));
 		}
 	}
 
