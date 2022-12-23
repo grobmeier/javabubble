@@ -8,12 +8,12 @@
     <h1 th:text="${bubbleName}">My Bubble</h1>
 
     <table>
-        <th>
-            <td>Name</td>
-            <td>Fediverse</td>
-            <td>Twitter</td>
-            <td>Organization</td>
-        </th>
+        <tr>
+            <th>Name</th>
+            <th>Fediverse</th>
+            <th>Twitter</th>
+            <th>Organization</th>
+        </tr>
         <tr th:each="person: ${people}">
             <td th:text="${person.name}">Max Meier</td>
             <td th:if="${person.fediverse != null}">
