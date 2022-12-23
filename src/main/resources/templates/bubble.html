@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1 th:text="${bubbleName}">My Bubble</h1>
+
+    <table>
+        <th>
+            <td>Name</td>
+            <td>Fediverse</td>
+            <td>Twitter</td>
+            <td>Organization</td>
+        </th>
+        <tr th:each="person: ${people}">
+            <td th:text="${person.name}">Max Meier</td>
+            <td th:if="${person.fediverse != null}">
+                <a th:href="${person.fediverse.getWebLink()}" th:text="${person.fediverse.getHandle()}">
+                @maxmeier@meierdon.de
+                </a>
+            </td><td th:if="${person.fediverse == null}">&nbsp;</td>
+            <td th:if="${person.twitter != null}">
+                <a th:href="${person.twitter.getWebLink()}" th:text="${person.twitter.getHandle()}">
+                    @maxmeier@meierdon.de
+                </a>
+            </td><td th:if="${person.twitter == null}">&nbsp;</td>
+        </tr>
+    </table>
+</body>
+</html>

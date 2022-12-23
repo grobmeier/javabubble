@@ -11,21 +11,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record JavaPerson(
-
+public record Person(
 		@JsonProperty(required = true) String name,
-
 		@JsonInclude(Include.NON_NULL) TwitterHandle twitter,
-
 		@JsonInclude(Include.NON_NULL) FediverseHandle fediverse,
-
 		@JsonInclude(Include.NON_NULL) GithubHandle github,
-
 		@JsonInclude(Include.NON_NULL) RedditHandle reddit
-
 ) {
-
-	public JavaPerson {
+	public Person {
 		if (name == null || name.isBlank()) {
 			throw new IllegalArgumentException("Field name must not be empty");
 		}
@@ -40,5 +33,4 @@ public record JavaPerson(
 				.sorted() //
 				.toList();
 	}
-
 }
