@@ -15,7 +15,7 @@ jobs:
         java-version: 17
     - run: |
         mvn --no-transfer-progress package exec:java -Dexec.mainClass=org.javabubble.generator.SiteGenerator
-      working-directory: generator
+      working-directory: .
 
 #    # Publish to AWS Bucket
 #    - uses: aws-actions/configure-aws-credentials@v1
